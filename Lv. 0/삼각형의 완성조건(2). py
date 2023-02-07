@@ -1,0 +1,9 @@
+def solution(sides):
+    Max = max(sides)
+    Min = min(sides)
+    
+    count = 0
+    for i in range(Max - Min + 1, Max + Min):
+        count += 1
+    
+    return count
