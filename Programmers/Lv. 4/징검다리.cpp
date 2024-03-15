@@ -15,7 +15,6 @@ int solution(int distance, vector<int> rocks, int n) {
     
     while (s <= e)
     {
-        int min_value = 1000000001;
         int m = (s + e) / 2;
         int cur_pos = 0;
         int cnt = 0;
@@ -26,11 +25,8 @@ int solution(int distance, vector<int> rocks, int n) {
                 cnt++;                
             }
             else
-            {
-                min_value = min(min_value, rock - cur_pos);
-                
-                cur_pos = rock;
-                
+            {            
+                cur_pos = rock;                
             }
         }    
         
@@ -40,7 +36,7 @@ int solution(int distance, vector<int> rocks, int n) {
         }
         else
         {
-            answer = min_value;
+            answer = m;
             s = m + 1;
         }
     }    
